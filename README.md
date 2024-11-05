@@ -6,4 +6,5 @@ D. van Wijk, S. Coogan, T. G. Molnar, M. Majji, and K. L. Hobbs, "Disturbance-Ro
 
 ## Supplemental Video: Spacecraft Rotation Example
 The objective is to keep the angular velocity trajectory within the red sphere (safe region). Our approach obeys the norm constraint on the angular velocity in the presence of unknown time-varying disturbances, while the standard bCBF approach does not, violating safety multiple times. 
+
 [![Spacecraft Rotation Supplemental Video](https://github.com/davidvwijk/DR-bCBF/blob/main/thumbnail_cropped.jpg)](https://www.youtube.com/watch?v=kJRBKPcA4dk)
