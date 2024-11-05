@@ -5,4 +5,4 @@ _Abstract_ - Obtaining a controlled invariant set is crucial for safety-critical
 D. van Wijk, S. Coogan, T. G. Molnar, M. Majji, and K. L. Hobbs, "Disturbance-Robust Backup Control Barrier Functions: Safety Under Uncertain Dynamics", Submitted to IEEE Control Systems Letters (L-CSS) with ACC option. 2024. Preprint: [[link]](https://arxiv.org/abs/2409.07700#)
 
 ## Supplemental Video: Spacecraft Rotation Example
-[![Spacecraft Rotation Supplemental Video](https://github.com/davidvwijk/DR-bCBF/blob/main/thumbnail.jpg)](https://www.youtube.com/watch?v=kJRBKPcA4dk)
+[![Spacecraft Rotation Supplemental Video](https://github.com/davidvwijk/DR-bCBF/blob/main/thumbnail_cropped.jpg)](https://www.youtube.com/watch?v=kJRBKPcA4dk)
