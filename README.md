@@ -17,3 +17,17 @@ The objective is to keep the angular velocity trajectory within the red sphere (
 2. Call main_sim.py for either the spacecraft rotation example or the double integrator example.
 
 To re-create Figure 2 in the paper (phase space visualization of double integrator for multiple backup horizons), call sampleCI.py.
+
+## BibTeX Citation
+
+```
+@misc{vanwijk2024disturbancerobustbackupcontrolbarrier,
+      title={Disturbance-Robust Backup Control Barrier Functions: Safety Under Uncertain Dynamics}, 
+      author={David E. J. van Wijk and Samuel Coogan and Tamas G. Molnar and Manoranjan Majji and Kerianne L. Hobbs},
+      year={2024},
+      eprint={2409.07700},
+      archivePrefix={arXiv},
+      primaryClass={eess.SY},
+      url={https://arxiv.org/abs/2409.07700}, 
+}
+```
