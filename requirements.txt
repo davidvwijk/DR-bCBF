@@ -1,0 +1,54 @@
+about-time==4.2.1
+alive-progress==3.1.5
+av==13.0.0
+colorama @ file:///C:/b/abs_a9ozq0l032/croot/colorama_1672387194846/work
+contourpy==1.1.0
+cycler @ file:///tmp/build/80754af9/cycler_1637851556182/work
+Cython @ file:///C:/b/abs_0cejxzwwya/croot/cython_1712282867708/work
+data==0.4
+decorator==5.1.1
+fonttools==4.42.1
+funcsigs==1.0.2
+future==0.18.3
+grapheme==0.6.0
+imageio-ffmpeg==0.5.1
+importlib-metadata==6.8.0
+importlib-resources==6.0.1
+jax==0.4.17
+jaxlib==0.4.16
+kiwisolver @ file:///C:/b/abs_88mdhvtahm/croot/kiwisolver_1672387921783/work
+latex==0.7.0
+matplotlib==3.9.0
+mkl-fft @ file:///C:/b/abs_19i1y8ykas/croot/mkl_fft_1695058226480/work
+mkl-random @ file:///C:/b/abs_edwkj1_o69/croot/mkl_random_1695059866750/work
+mkl-service==2.4.0
+ml-dtypes==0.3.1
+numpy @ file:///C:/b/abs_c1ywpu18ar/croot/numpy_and_numpy_base_1708638681471/work/dist/numpy-1.26.4-cp39-cp39-win_amd64.whl#sha256=f284633067fde4bb078a09085a1c9e99a3218c129f5312b7b3d76c9340442a25
+opencv-python==4.10.0
+opencv-python-headless==4.10.0
+opt-einsum==3.3.0
+packaging==23.1
+pandas==2.1.3
+Pillow==10.0.0
+ply==3.11
+psutil==6.0.0
+pyparsing==3.0.9
+PyQt5==5.15.10
+PyQt5-sip @ file:///C:/b/abs_c0pi2mimq3/croot/pyqt-split_1698769125270/work/pyqt_sip
+python-dateutil==2.8.2
+pytz==2023.3.post1
+quadprog==0.1.11
+scipy @ file:///C:/b/abs_efv75hqhju/croot/scipy_1717521501389/work/dist/scipy-1.13.1-cp39-cp39-win_amd64.whl#sha256=b007813de746b130f0c7e6d81a850a9a511af7ac66d8f6b7dbad791a97eae977
+sdeint==0.3.0
+seaborn==0.13.0
+shutilwhich==1.1.0
+sip @ file:///C:/b/abs_edevan3fce/croot/sip_1698675983372/work
+six @ file:///tmp/build/80754af9/six_1644875935023/work
+snakeviz==2.2.0
+tempdir==0.7.1
+tomli @ file:///C:/Windows/TEMP/abs_ac109f85-a7b3-4b4d-bcfd-52622eceddf0hy332ojo/croots/recipe/tomli_1657175513137/work
+tornado @ file:///C:/b/abs_7bua0304mj/croot/tornado_1718740122405/work
+tqdm @ file:///C:/b/abs_77wju137gk/croot/tqdm_1724853945787/work
+tzdata==2023.3
+unicodedata2 @ file:///C:/b/abs_b6apldlg7y/croot/unicodedata2_1713212998255/work
+zipp==3.16.2
