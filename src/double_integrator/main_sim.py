@@ -11,7 +11,7 @@ Disturbance-Robust Backup Control Barrier Functions (DR-bCBF) code base.
 
 ---------------------------------------------------------------------------
 
-Module runs full simulation.
+Module runs full simulation for double integrator example.
 
 """
 
@@ -20,18 +20,6 @@ from safety import ASIF
 from control import Control
 from dynamics import Dynamics
 from plotting import Plotter
-import cProfile
-
-# TODO BEFORE PUBLIC
-# [] Improve efficiency via linear dynamics
-# [] Improve efficiency by computing backup flow all at once (spacecraft example)
-# [] Removing any unnecessary code, plots etc.
-# [] Add citation to readme
-# [] Remove unneccessary commentss
-# [] List of requirements for conda env
-# [] Run pylint, flake8 on entire folder
-# [] Instructions on how to install and run everything/recreate figures
-# []
 
 
 class Simulation(ASIF, Control, Dynamics):

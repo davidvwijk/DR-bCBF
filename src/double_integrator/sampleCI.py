@@ -41,7 +41,6 @@ class sampleCI:
             verbose=True,
             robust=True,
             dw_bool=True,
-            du_bool=False,
         )
         # Set initial conditions and T_b
         env.x0 = np.array([xmin, 0])
@@ -64,7 +63,7 @@ class sampleCI:
 
         return yss
 
-    def runMain(self, Tb_array):
+    def runMain(self, Tb_array, save_fig=False, show_fig=True):
         """
         Computes steady-state velocity values for various backup horizon times.
         Generates Figure 2 in manuscript.
@@ -88,7 +87,6 @@ class sampleCI:
                 verbose=True,
                 robust=True,
                 dw_bool=True,
-                du_bool=False,
             )
 
             env.x0 = np.array([xmin, yss])
@@ -150,7 +148,6 @@ class sampleCI:
                     verbose=True,
                     robust=True,
                     dw_bool=True,
-                    du_bool=False,
                 )
 
                 env.x0 = np.array([-1.58, 0])
@@ -290,10 +287,12 @@ class sampleCI:
 
         dpi = 500
 
-        for i in plt.get_fignums():
-            plt.figure(i)
-            plt.savefig("plots/figure%d.png" % i, dpi=dpi, bbox_inches="tight")
-        plt.show()
+        if save_fig:
+            for i in plt.get_fignums():
+                plt.figure(i)
+                plt.savefig("plots/figure%d.png" % i, dpi=dpi, bbox_inches="tight")
+        if show_fig:
+            plt.show()
 
         return yss
 
@@ -303,4 +302,4 @@ if __name__ == "__main__":
     Tb = np.array([0.5, 1, 1.25])
 
     sCI = sampleCI()
-    yss = sCI.runMain(Tb)
+    yss = sCI.runMain(Tb, save_fig=False, show_fig=True)

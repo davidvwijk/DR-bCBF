@@ -11,7 +11,7 @@ Disturbance-Robust Backup Control Barrier Functions (DR-bCBF) code base.
 
 ---------------------------------------------------------------------------
 
-Module runs full simulation, calling necessary classes.
+Module runs full simulation for spacecraft rotation example.
 
 """
 
@@ -20,7 +20,6 @@ from safety import ASIF
 from control import Control
 from dynamics import Dynamics
 from plotting import Plotter
-import cProfile
 
 
 class Simulation(ASIF, Control, Dynamics):

@@ -107,7 +107,7 @@ class ASIF(Constraint):
         tmax_b = self.backupTime
 
         # Backup trajectory points
-        rtapoints = int(math.floor(tmax_b / self.del_t)) + 1
+        rtapoints = int(math.ceil(tmax_b / self.del_t))
 
         # State tracking array
         lenx = len(self.x0)
@@ -121,28 +121,14 @@ class ASIF(Constraint):
         # Simulate flow under backup control law
         new_x = np.concatenate((x, S[:, :, 0].flatten()))
 
-        # backupFlow = self.integrateStateBackup(
-        #     new_x,
-        #     np.arange(0, self.backupTime, self.del_t),
-        #     self.int_options,
-        # )
+        backupFlow = self.integrateStateBackup(
+            new_x,
+            np.arange(0, self.backupTime, self.del_t),
+            self.int_options,
+        )
 
-        # phi[:, :] = backupFlow[:lenx, :].T
-        # S[:, :, :] = backupFlow[lenx:, :].reshape(lenx, lenx, rtapoints)
-
-        for i in range(rtapoints - 1):
-            u_b = self.backupControl(phi[i, :])  # Constant for this application
-
-            # Compute the nominal flow (no disturbances)
-            new_x = self.integrateState(
-                new_x,
-                u_b,
-                self.del_t,
-                np.zeros(2),
-                self.int_options,
-            )
-            phi[i + 1, :] = new_x[0:lenx]
-            S[:, :, i + 1] = new_x[lenx:].reshape((lenx, lenx))
+        phi[:, :] = backupFlow[:lenx, :].T
+        S[:, :, :] = backupFlow[lenx:, :].reshape(lenx, lenx, rtapoints)
 
         # Store backup trajectories for plotting
         if self.curr_step % self.backup_save_N == 0:
@@ -238,7 +224,7 @@ class ASIF(Constraint):
             solver_dt = toc - tic
             u_act = u_act[0]  # Only extract scalar we need
         except:
-            u_act = u_b
+            u_act = -1
             solver_dt = None
             if self.verbose:
                 print("no soltn")
