@@ -11,3 +11,9 @@ The objective is to keep the angular velocity trajectory within the red sphere (
 
 [![Spacecraft Rotation Supplemental Video](https://github.com/davidvwijk/DR-bCBF/blob/main/thumbnail_cropped.jpg)](https://www.youtube.com/watch?v=kJRBKPcA4dk)
 
+## Running the code
+
+1. Install the necessary packages using pip install -r requirements.txt
+2. Call main_sim.py for either the spacecraft rotation example or the double integrator example.
+
+To re-create Figure 2 in the paper (phase space visualization of double integrator for multiple backup horizons), call sampleCI.py.
