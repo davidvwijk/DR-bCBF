@@ -13,12 +13,12 @@ The objective is to keep the angular velocity trajectory within the red sphere (
 
 ## Running the code
 
-1. Install the necessary packages using pip install -r requirements.txt
-2. Call main_sim.py for either the spacecraft rotation example or the double integrator example.
+1. Install the necessary packages using `pip install -r requirements.txt`
+2. Call `main_sim.py` for either the spacecraft rotation example or the double integrator example. This will run a single simulation with the default parameters using our DR-bCBF method.
 
 Recreate figures:
-- To re-create Figure 2 in the paper call sampleCI.py
-- To re-create Figure 3 in the paper call comparison.py
+- To re-create Figure 2 in the paper call `sampleCI.py`
+- To re-create Figure 3 in the paper call `comparison.py`
 
 ## BibTeX Citation
 
