@@ -15,7 +15,6 @@ Module contains functions required for safety-critical control using control bar
 
 """
 
-from matplotlib import testing
 import numpy as np
 import time
 import math

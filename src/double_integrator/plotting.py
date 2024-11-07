@@ -19,7 +19,6 @@ import matplotlib.pyplot as plt
 import matplotlib.patches as patches
 from matplotlib.collections import PatchCollection
 import numpy as np
-import math
 
 
 class Plotter:

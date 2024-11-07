@@ -15,8 +15,6 @@ Module containing control laws.
 
 """
 
-import numpy as np
-
 
 class Control:
     def setupControl(
