@@ -69,7 +69,6 @@ class Dynamics:
         Constructs skew symmetric matrix.
 
         """
-
         return np.array([[0, -x[2], x[1]], [x[2], 0, -x[0]], [-x[1], x[0], 0]])
 
     def fastCross(self, x1, x2):
@@ -83,7 +82,6 @@ class Dynamics:
         Returns:
             numpy.ndarray: nxn matrix.
         """
-
         return self.skew(x1) @ x2
 
     def computeJacobianSTM(self, x):
@@ -91,7 +89,6 @@ class Dynamics:
         Compute Jacobian of dynamics.
 
         """
-
         J = self.J
         jac = -self.invJ @ (self.skew(x) @ J - self.skew(J @ x))
         return jac

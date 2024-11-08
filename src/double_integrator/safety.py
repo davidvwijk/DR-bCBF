@@ -153,14 +153,6 @@ class ASIF(Constraint):
                 # Gronwall bound
                 delta_t = (self.dw_max / self.L_cl) * (np.exp(self.L_cl * t) - 1)
 
-                # Linear systems analysis bound (tighter than GW)
-                def integrand(x, t):
-                    return np.sqrt(
-                        0.5 * ((t - x) ** 2 + 2 + (t - x) * np.sqrt((t - x) ** 2 + 4))
-                    )
-
-                # delta_t = self.dw_max * quad(integrand, 0, t, args=(t))[0]
-
                 # Tightening epsilon
                 epsilon = self.Lh_const * delta_t
 

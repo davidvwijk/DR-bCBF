@@ -74,7 +74,6 @@ class Dynamics:
         """
         Compute Jacobian of dynamics.
         """
-
         jac = self.A
         return jac
 
