@@ -74,7 +74,7 @@ class Dynamics:
 
     def fastCross(self, x1, x2):
         """
-        Calculates cross product, cross(x1,x2).
+        Calculates cross product, cross(x1,x2). Faster than using np.cross() for this application.
 
         Args:
             x1 (numpy.ndarray): nx1 vector.
@@ -166,7 +166,7 @@ class Dynamics:
 
     def integrateStateBackup(self, x, tspan_b, options):
         """
-        State integrator using propagation function.
+        Propagate backup flow over the backup horizon. Evaluate at discrete points.
 
         """
         t_step = (0.0, tspan_b[-1])

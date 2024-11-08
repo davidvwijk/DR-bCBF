@@ -12,7 +12,7 @@ Disturbance-Robust Backup Control Barrier Functions (DR-bCBF) code base.
 ---------------------------------------------------------------------------
 
 Module contains plotting functions for obtaining the final figures with the various 
-forward invariant sets for different size T. Used to generate figure 2 in manuscript.
+forward invariant sets for different size T. Used to generate Figure 2 in manuscript.
 
 """
 
@@ -30,7 +30,7 @@ class sampleCI:
     def getyss(self, Tb, xmin):
         """
         Runs a simulation with a particular backup horizon, and obtains the "steady state"
-        velocity value used estimate and plot the controlled invariant sets computed online.
+        velocity value used to generate and plot the controlled invariant sets computed online.
 
         """
 

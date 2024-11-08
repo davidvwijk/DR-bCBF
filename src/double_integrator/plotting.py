@@ -270,29 +270,30 @@ class Plotter:
 
                     if i < max_numBackup:
                         circ = []
-                        for j in np.arange(0, rta_points, e_tstep):
-                            t = j * env.del_t
-                            r_t = env.delta_array[j]
-                            cp = patches.Circle(
-                                (xy[j, 0], xy[j, 1]),
-                                r_t,
-                                color=gw_edge_color,
-                                fill=False,
-                                linestyle="--",
-                                label="GW Norm Ball",
+                        if env.robust:
+                            for j in np.arange(0, rta_points, e_tstep):
+                                t = j * env.del_t
+                                r_t = env.delta_array[j]
+                                cp = patches.Circle(
+                                    (xy[j, 0], xy[j, 1]),
+                                    r_t,
+                                    color=gw_edge_color,
+                                    fill=False,
+                                    linestyle="--",
+                                    label="GW Norm Ball",
+                                )
+                                if i == 0 and j == 0:
+                                    ax.add_patch(cp)
+                                circ.append(cp)
+                            coll = PatchCollection(
+                                circ,
+                                zorder=100,
+                                facecolors=("none",),
+                                edgecolors=(gw_edge_color,),
+                                linewidths=(1,),
+                                linestyle=("--",),
                             )
-                            if i == 0 and j == 0:
-                                ax.add_patch(cp)
-                            circ.append(cp)
-                        coll = PatchCollection(
-                            circ,
-                            zorder=100,
-                            facecolors=("none",),
-                            edgecolors=(gw_edge_color,),
-                            linewidths=(1,),
-                            linestyle=("--",),
-                        )
-                        ax.add_collection(coll)
+                            ax.add_collection(coll)
                         plt.plot(
                             xy[:, 0],
                             xy[:, 1],
@@ -322,31 +323,32 @@ class Plotter:
                         label = None
 
                     if i < max_numBackup:
-                        circ = []
-                        for j in np.arange(0, rta_points, e_tstep):
-                            t = j * env.del_t
-                            r_t = env.delta_array[j]
-                            if j == rta_points - 1:
-                                cp = patches.Circle(
-                                    (xy[j, 0], xy[j, 1]),
-                                    r_t,
-                                    color=gw_edge_color,
-                                    fill=False,
-                                    linestyle="--",
-                                    label="GW Norm Ball",
-                                )
-                                if i == 0:
-                                    ax.add_patch(cp)
-                                circ.append(cp)
-                        coll = PatchCollection(
-                            circ,
-                            zorder=100,
-                            facecolors=("none",),
-                            edgecolors=(gw_edge_color,),
-                            linewidths=(1,),
-                            linestyle=("--",),
-                        )
-                        ax.add_collection(coll)
+                        if env.robust:
+                            circ = []
+                            for j in np.arange(0, rta_points, e_tstep):
+                                t = j * env.del_t
+                                r_t = env.delta_array[j]
+                                if j == rta_points - 1:
+                                    cp = patches.Circle(
+                                        (xy[j, 0], xy[j, 1]),
+                                        r_t,
+                                        color=gw_edge_color,
+                                        fill=False,
+                                        linestyle="--",
+                                        label="GW Norm Ball",
+                                    )
+                                    if i == 0:
+                                        ax.add_patch(cp)
+                                    circ.append(cp)
+                            coll = PatchCollection(
+                                circ,
+                                zorder=100,
+                                facecolors=("none",),
+                                edgecolors=(gw_edge_color,),
+                                linewidths=(1,),
+                                linestyle=("--",),
+                            )
+                            ax.add_collection(coll)
                         plt.plot(
                             xy[:, 0],
                             xy[:, 1],

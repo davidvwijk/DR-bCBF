@@ -50,6 +50,7 @@ class Dynamics:
     def propMain(self, t, x, u, dist, args):
         """
         Propagation function for dynamics with disturbance and STM if applicable.
+        Could be optimized (linear system).
 
         """
         lenx = len(self.x0)
@@ -135,7 +136,7 @@ class Dynamics:
 
     def integrateStateBackup(self, x, tspan_b, options):
         """
-        State integrator using propagation function.
+        Propagate backup flow over the backup horizon. Evaluate at discrete points.
 
         """
         t_step = (0.0, tspan_b[-1])

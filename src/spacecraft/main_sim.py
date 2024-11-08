@@ -80,7 +80,7 @@ class Simulation(ASIF, Control, Dynamics):
             u_des = self.primaryControl(x_curr, t)
             u_des_full[:, i] = u_des
 
-            # If safety check on, monitor control
+            # If safety check on, monitor control using active set invariance filter
             if self.safety_flag:
                 u, boolean, sdt, cdt = self.asif(x_curr, u_des)
                 solver_times.append(sdt)
@@ -90,7 +90,7 @@ class Simulation(ASIF, Control, Dynamics):
             else:
                 u = u_des
 
-            # Compute disturbance vectors (if applicable)
+            # Compute disturbance vector (if applicable)
             if self.dw_bool:
                 dw = self.disturbanceFun(t, x_curr, u, {})
                 self.dw_full[:, i] = dw

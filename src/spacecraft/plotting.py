@@ -41,7 +41,6 @@ class Plotter:
     ):
 
         # Define constants and extract values
-
         title_sz, xaxis_sz, legend_sz, ticks_sz = 20, 21, 21, 16
         title_flag = False
         lwp = 2.4
@@ -90,7 +89,6 @@ class Plotter:
             x = radius * np.cos(u) * np.sin(v)
             y = radius * np.sin(u) * np.sin(v)
             z = radius * np.cos(v)
-            # color = "#F97306"
             c1 = ax.plot_surface(
                 center[0] - x,
                 center[1] - y,
@@ -108,7 +106,6 @@ class Plotter:
             x = radius * np.cos(u) * np.sin(v)
             y = radius * np.sin(u) * np.sin(v)
             z = radius * np.cos(v)
-            # color = "#F97306"
             c1 = ax.plot_wireframe(
                 center[0] - x,
                 center[1] - y,
@@ -293,7 +290,6 @@ class Plotter:
         dhr = 3022 / 3200
         p1 = False
         if sphere_plot:
-            # ax = plt.figure(figsize=(10, 7), dpi=100)
             if p1:
                 ax = plt.figure(figsize=(8, 8), dpi=100)
             else:
@@ -320,7 +316,6 @@ class Plotter:
                 env.omega_max,
                 "red",
                 0.2,
-                # "$\| \omega \|$ Constraint",
                 "$\mathcal{C}_{\\rm S} $",
             )
 
@@ -337,7 +332,6 @@ class Plotter:
                 lists = splitfun(intervening, 2)
                 for i in range(len(lists)):
                     if i == 0:
-                        # label = "Safety Intervention"
                         label = None
                     else:
                         label = None
@@ -482,7 +476,6 @@ class Plotter:
             legend_sz = 17
 
             fig = plt.figure(figsize=(11.69, 7), dpi=100)
-            # fig = plt.figure(figsize=((dw/dh)*7, 7), dpi=100)
             ax = fig.add_subplot(2, 1, 1)
             plt.xticks(fontsize=ticks_sz)
             plt.yticks(fontsize=ticks_sz)
@@ -517,7 +510,6 @@ class Plotter:
                 tspan_backup = np.linspace(0, env.backupTime - env.del_t, rtapoints)
                 for i, norm in enumerate(norms):
                     if i == 0:
-                        # label = "Nominal Backup Flow"
                         label = r"$\boldsymbol{\phi}^{n}_{\rm b} (\tau, \boldsymbol{\omega})$"
                     else:
                         label = None
@@ -547,7 +539,6 @@ class Plotter:
                 lists = splitfun(intervening, 2)
                 for i in range(len(lists)):
                     if i == 0:
-                        # label = "Safety Intervention"
                         label = None
                     else:
                         label = None
@@ -603,7 +594,6 @@ class Plotter:
                     u_p[i, 1:],
                     "--",
                     color=color,
-                    # label="$u_{\\rm des," + f"{i+1}" + "}$",
                     label="$u_{\\rm p," + f"{i+1}" + "}$",
                     linewidth=lwp,
                 )
@@ -612,7 +602,6 @@ class Plotter:
                     u_act[i, 1:],
                     "-",
                     color=color,
-                    # label="$u_{\\rm act," + f"{i+1}" + "}$",
                     label="$u_{\\rm safe," + f"{i+1}" + "}$",
                     linewidth=lwp,
                 )
@@ -625,9 +614,7 @@ class Plotter:
                 loc="upper center",
                 bbox_to_anchor=(0.5, 1.1),
                 ncol=3,
-                # fancybox=True,
                 fontsize=legend_sz,
-                # shadow=True,
             )
 
             plt.xlabel("time (s)", fontsize=xaxis_sz)
@@ -737,7 +724,6 @@ class Plotter:
             x = radius * np.cos(u) * np.sin(v)
             y = radius * np.sin(u) * np.sin(v)
             z = radius * np.cos(v)
-            # color = "#F97306"
             c1 = ax.plot_wireframe(
                 center[0] - x,
                 center[1] - y,
@@ -766,7 +752,6 @@ class Plotter:
         dhr = 3054 / 3200
         p1 = False
         if sphere_plot:
-            # ax = plt.figure(figsize=(10, 7), dpi=100)
             if p1:
                 ax = plt.figure(figsize=(8, 8), dpi=100)
             else:
@@ -793,7 +778,6 @@ class Plotter:
                 env.omega_max,
                 "red",
                 0.2,
-                # "$\| \omega \|$ Constraint",
                 "$\mathcal{C}_{\\rm S} $",
             )
 
@@ -811,7 +795,6 @@ class Plotter:
                 lists = splitfun(intervening, 2)
                 for i in range(len(lists)):
                     if i == 0:
-                        # label = "Safety Intervention"
                         label = None
                     else:
                         label = None
@@ -868,7 +851,6 @@ class Plotter:
                 markersize=8,
                 label=r"$\boldsymbol{\omega_0}$",
             )
-            # ax.view_init(elev=29, azim=128)
             ax.view_init(elev=11, azim=136)
 
             norms_vanilla = np.zeros(x_vanilla.shape[1])
@@ -885,9 +867,7 @@ class Plotter:
                 text_pos[1],
                 text_pos[2],
                 "safety \n violations",
-                # "violation",
                 fontsize=legend_sz,
-                # bbox=dict(facecolor="none", edgecolor="black", pad=10.0),
                 horizontalalignment="center",
                 verticalalignment="bottom",
             )
@@ -994,7 +974,6 @@ class Plotter:
                 norms_vanilla,
                 color="red",
                 linewidth=lwp,
-                # label=None,
                 label="bCBF-QP",
             )
 
@@ -1012,8 +991,6 @@ class Plotter:
                 tspan_backup = np.linspace(0, env.backupTime - env.del_t, rtapoints)
                 for i, norm in enumerate(norms):
                     if i == 0:
-                        # label = "Nominal Backup Flow"
-                        # label = r"$\boldsymbol{\phi}^{n}_{\rm b} (\tau, \boldsymbol{\omega})$"
                         label = None
                     else:
                         label = None
@@ -1034,9 +1011,7 @@ class Plotter:
                 norms,
                 color="blue",
                 linewidth=lwp,
-                # label=None,
                 label="DR-bCBF-QP",
-                # label="Ours",
             )
 
             ax.set_xlim([0, t_span[-1]])
@@ -1045,7 +1020,6 @@ class Plotter:
                 lists = splitfun(intervening, 2)
                 for i in range(len(lists)):
                     if i == 0:
-                        # label = "Safety Intervention"
                         label = None
                     else:
                         label = None
@@ -1075,8 +1049,6 @@ class Plotter:
             )
             ax.legend(
                 fontsize=legend_sz,
-                # fancybox=True,
-                # shadow=True,
                 loc="lower right",
             )
             plt.grid(True)
@@ -1101,7 +1073,6 @@ class Plotter:
                     u_p[i, 1:],
                     "--",
                     color=color,
-                    # label="$u_{\\rm des," + f"{i+1}" + "}$",
                     label="$u_{\\rm p," + f"{i+1}" + "}$",
                     linewidth=lwp,
                 )
@@ -1110,7 +1081,6 @@ class Plotter:
                     u_act[i, 1:],
                     "-",
                     color=color,
-                    # label="$u_{\\rm act," + f"{i+1}" + "}$",
                     label="$u_{\\rm safe," + f"{i+1}" + "}$",
                     linewidth=lwp,
                 )
@@ -1123,9 +1093,7 @@ class Plotter:
                 loc="upper center",
                 bbox_to_anchor=(0.5, 1.1),
                 ncol=3,
-                # fancybox=True,
                 fontsize=legend_sz,
-                # shadow=True,
             )
 
             plt.xlabel("time (s)", fontsize=xaxis_sz)

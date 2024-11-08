@@ -20,8 +20,6 @@ import time
 import math
 import quadprog
 
-# from qpsolvers import solve_qp
-
 
 class Constraint:
     def alpha(self, x):
@@ -53,7 +51,6 @@ class Constraint:
         Reachability constraint.
 
         """
-
         return self.gamma - 0.5 * x.T @ self.J @ x
 
     def grad_hb(self, x):

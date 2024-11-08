@@ -169,13 +169,13 @@ class ASIF(Constraint):
 
                 # Robustness term
                 robust_grad = np.linalg.norm(gradh_phi @ S[:, :, i]) * self.dw_max
+
+                # Store only the first time
+                if len(self.delta_array) < rtapoints:
+                    self.delta_array.append(delta_t)
             else:
                 # Discretization tightening constant
                 mu_d = (self.del_t / 2) * self.Lh_const * self.sup_fcl
-
-            # Store only the first time
-            if len(self.delta_array) < rtapoints:
-                self.delta_array.append(delta_t)
 
             h_temp_i = (
                 -(gradh_phi @ S[:, :, i] @ fx_0 + self.alpha(h_phi - epsilon - mu_d))
