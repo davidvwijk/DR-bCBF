@@ -17,8 +17,8 @@ The objective is to keep the angular velocity trajectory within the red sphere (
 2. Call `main_sim.py` for either the spacecraft rotation example or the double integrator example. This will run a single simulation with the default parameters using our DR-bCBF method.
 
 Recreate figures:
-- To re-create Figure 2 in the paper call `sampleCI.py`
-- To re-create Figure 3 in the paper call `comparison.py`
+- To recreate Figure 2 in the paper call `sampleCI.py` (in double_integrator folder).
+- To recreate Figure 3 in the paper call `comparison.py` (in spacecraft folder).
 
 ## BibTeX Citation
 
