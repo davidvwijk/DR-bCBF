@@ -788,8 +788,8 @@ class Plotter:
             for axis in "xyz":
                 getattr(ax, "set_{}lim".format(axis))((-max_radius, max_radius))
 
-            ax.plot(x1_v, x2_v, x3_v, color="red", linewidth=lwp, label=None)
-            ax.plot(x1, x2, x3, color="blue", linewidth=lwp, label=None)
+            ax.plot(x1_v, x2_v, x3_v, color="red", linewidth=lwp, label="bCBF")
+            ax.plot(x1, x2, x3, color="blue", linewidth=lwp, label="DR-bCBF")
 
             if intervening:
                 lists = splitfun(intervening, 2)
@@ -920,13 +920,13 @@ class Plotter:
                 if save_plots:
                     plt.savefig("plots/3d_plot.png", dpi=400)
             else:
-                ax.legend(
+                leg = ax.legend(
                     fontsize=legend_sz,
                     loc="center left",
                     bbox_to_anchor=(-0.163, 0.5),
                     fancybox=True,
                     shadow=True,
-                )
+                ).set_zorder(999)
                 plt.tight_layout()
                 if save_plots:
                     dpi = 225
@@ -974,7 +974,7 @@ class Plotter:
                 norms_vanilla,
                 color="red",
                 linewidth=lwp,
-                label="bCBF-QP",
+                label="bCBF",
             )
 
             if env.backupTrajs:
@@ -1011,7 +1011,7 @@ class Plotter:
                 norms,
                 color="blue",
                 linewidth=lwp,
-                label="DR-bCBF-QP",
+                label="DR-bCBF",
             )
 
             ax.set_xlim([0, t_span[-1]])
